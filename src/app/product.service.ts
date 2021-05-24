@@ -5,11 +5,12 @@ import { map } from 'rxjs/operators';
 
 @Injectable()
 export class ProductService {
-  _albumUrl: string = '../assets/album.json'
+  private _albumUrl: string = '../assets/album.json'
 
   constructor(private _http: Http) { }
 
-  getAlbum(id:number) : Observable<any>{
-    return this._http.get(this._albumUrl).pipe(map((response: Response) => response.json()))  // #9
+  //getAlbum(id:number) : Observable<any>{
+  getAlbum(id:number) {
+      return this._http.get(this._albumUrl).pipe(map((response: Response) => response.json()))  // #9
   }
 }
