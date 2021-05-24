@@ -9,9 +9,8 @@ export class ProductService {
 
   constructor(private _http: Http) { }
 
-  getAlbum(id:number) : Observable<any> {
-    //console.log('service returning ', this._http.get(this._albumUrl).pipe(map((response: Response) => response.json())) )
-
-    return this._http.get(this._albumUrl).map((response: Response) => response.json())  // #9
+  getAlbum(id: number) {
+    return this._http.get(this._albumUrl).map((response) => response.json());
   }
+
 }
